@@ -303,7 +303,7 @@ static void msm_restart_prepare(const char *cmd)
 	set_dload_mode(0);
 
 	/* Write download mode flags if we're panic'ing */
-	set_dload_mode(in_panic);
+	set_dload_mode(0);
 
 	/* Write download mode flags if restart_mode says so */
 	if (restart_mode == RESTART_DLOAD)
@@ -325,7 +325,7 @@ static void msm_restart_prepare(const char *cmd)
 		set_dload_mode(0);
 #else
 	set_dload_mode(0);
-	set_dload_mode(in_panic);
+	set_dload_mode(0);
 	if (restart_mode == RESTART_DLOAD)
 		set_dload_mode(1);
 #endif
